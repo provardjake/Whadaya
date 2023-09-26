@@ -6,16 +6,16 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Post:</h3>
+    <h3>Create a New Review:</h3>
 
     <form class="form new-review-form">
       <div class="form-group">
-        <label for="review-title">Title:</label>
-        <input class="form-input" type="text" id="review-title" name="review-title" />
+        <label for="review-category">Category:</label>
+        <input class="form-input" type="text" id="review-category" name="review-category" />
       </div>
       <div class="form-group">
-        <label for="review-id">Id:</label>
-        <input class="form-input" type="text" id="review-id" name="review-id" />
+        <label for="review-title">Title:</label>
+        <input class="form-input" type="text" id="review-title" name="review-title" />
       </div>
       <div class="form-group">
         <label for="review-message">Review:</label>
@@ -35,6 +35,12 @@
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/review/{{review.title}}">{{review.title}}</a></h4>
+      </div>
+       <div class="col-md-8">
+        <h4><a href="/review/{{review.message}}">{{review.message}}</a></h4>
+      </div>
+       <div class="col-md-8">
+        <h4><a href="/review/{{review.category}}">{{review.category}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
