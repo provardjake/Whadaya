@@ -17,9 +17,12 @@ User.init(
             autoIncrement: true
         },
         username: {
-            type: DataTypes.VARCHAR(14),
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
+            validate: {
+                len: [3, 50]
+            }
         },
         password: {
             type: DataTypes.STRING,
