@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS whadaya_db;
+CREATE DATABASE whadaya_db;
