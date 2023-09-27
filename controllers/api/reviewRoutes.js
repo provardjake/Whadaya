@@ -35,4 +35,15 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get("/", async (req, res)=>{
+  try{
+    const reviewData = await Review.findAll();
+
+    res.status(200).json(reviewData);
+  }
+  catch(err){
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;

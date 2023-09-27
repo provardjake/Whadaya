@@ -16,7 +16,7 @@ Review.init(
             allowNull: false,
             unique: true,
             validate: {
-                len: [15, 500]
+                len: [1, 500]
             }
         },
         message: {
