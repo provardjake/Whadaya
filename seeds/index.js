@@ -3,7 +3,8 @@ const { User, Review } = require('../models');
 
 const userData = require('./userData.json');
 const postInfo = require('./reviewData.json');
-
+const commentInfo = require('./commentData.json');
+const categoryInfo = require('./categoryData.json')
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
