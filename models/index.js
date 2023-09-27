@@ -34,3 +34,5 @@ Review.hasMany(Comment,{
 Comment.belongsTo(Review,{
     foreignKey: "review_id"
 });
+
+module.exports= {User, Comment, Categories, Review}
