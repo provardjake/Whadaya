@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Review } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -67,6 +67,27 @@ router.get("/", async (req, res)=>{
   catch(err){
     res.status(400).json(err);
   }
-})
+});
+
+router.get("/:id", async (req, res)=>{
+  try{
+    const userData = await User.findByPk(req.params.id, {
+      include: [
+        {
+          model: Review
+        }
+      ]
+    });
+
+    if(!userData){
+      res.status(404).json({message: "User not found!"});
+      return;
+    }
+    res.status(200).json(userData);
+  }
+  catch(err){
+    res.status(400).json(err);
+  }
+});
 
 module.exports = router;
