@@ -12,8 +12,12 @@ Review.init(
             autoIncrement: true
         },
         title: {
-            type: DataTypes.VARCHAR(80),
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                len: [15, 500]
+            }
         },
         message: {
             type: DataTypes.STRING,
