@@ -1,37 +1,32 @@
 [
     {
-        "id": 1,
         "message": "Nice, i gotta check this movie out",
         "user_id": 2,
-        "category_id": 1
+        "review_id": 1
 
     },
     {
-        "id": 1,
         "message": "Def gonna watch this l8r",
         "user_id": 3,
-        "category_id": 1
+        "review_id": 2
 
     },
     {
-        "id": 2,
         "message": "Not a huge fan of Christopher but this looks funny",
         "user_id": 3,
-        "category_id": 1
+        "review_id": 3
 
     },
     {
-        "id": 2,
         "message": "Main character looks like my buddy Trever",
         "user_id": 1,
-        "category_id": 1
+        "review_id": 2
 
     },
     {
-        "id": 3,
         "message": "I wanna go home...",
         "user_id": 5,
-        "category_id": 1
+        "review_id": 1
 
     }
 

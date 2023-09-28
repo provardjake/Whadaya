@@ -73,4 +73,24 @@ router.get("/:id", async (req, res)=>{
   }
 });
 
+router.put("/:id", async(req, res)=>{
+  try{
+    const updatedReview = await Review.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if(!updatedReview){
+      res.status(404).json({message: "Review not found!"});
+      return;
+  }
+
+    res.status(200).json(updatedReview);
+  }
+  catch(err){
+    res.status(400).json(err);
+  }
+})
+
 module.exports = router;
