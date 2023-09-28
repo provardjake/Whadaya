@@ -22,6 +22,15 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+router.get("/review", withAuth, async(req, res)=>{
+  try{
+    res.render("review");
+  }
+  catch(err){
+    res.status(500).json(err);
+  }
+})
+
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
