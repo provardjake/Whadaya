@@ -1,8 +1,5 @@
 const router = require('express').Router();
-const { reverse } = require('dns');
-const { Review, User, Comment, Categories } = require('../../models');
-const withAuth = require('../../utils/auth');
-const { update } = require('../../models/User');
+const {User, Comment} = require('../../models');
 
 router.get("/", async(req, res)=>{
     try{
@@ -80,9 +77,16 @@ router.put("/:id", async (req, res)=>{
             }
         });
 
+        if(!updatedComment){
+            res.status(404).json({message: "Comment not found!"});
+            return;
+        }
+
         res.status(200).json(updatedComment);
     }
     catch(err){
         res.status(400).json(err);
     }
-})
+});
+
+module.exports = router;
