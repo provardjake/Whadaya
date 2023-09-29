@@ -14,7 +14,6 @@ Review.init(
         title: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
             validate: {
                 len: [1, 500]
             }
@@ -32,10 +31,6 @@ Review.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
-        },
-        date: {
-            type: DataTypes.DATE,
-            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
