@@ -4,8 +4,9 @@
 {{#each review as |review| }}
 <div class="row mb-4 review">
   <div class="col-md-5">
+    <h2>{{review.category}}</h2>
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      
       <a href="/review/{{review.id}}">{{review.title}}</a>
     </h2>
   
@@ -15,6 +16,7 @@
     <p>
       {{review.message}}
     </p>
+<p>{{review.replies}}{{review.likes}}</p>
   </div>
 </div>
 {{/each}}
