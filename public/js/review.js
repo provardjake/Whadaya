@@ -1,5 +1,3 @@
-// const { get } = require("../../controllers/homeRoutes");
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -41,13 +39,9 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-review-form')
-  .addEventListener('submit', newFormHandler);
+document.querySelector('.new-review-form').addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.review-list')
-  .addEventListener('click', delButtonHandler);
+document.querySelector('.review-list').addEventListener('click', delButtonHandler);
 
 
 

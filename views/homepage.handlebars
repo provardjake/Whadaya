@@ -4,19 +4,22 @@
 {{#each review as |review| }}
 <div class="row mb-4 review">
   <div class="col-md-5">
-    <h2>{{review.category}}</h2>
+    <h2>{{categories.name}}</h2>
     <h2>
       
       <a href="/review/{{review.id}}">{{review.title}}</a>
     </h2>
   
-    <p>Created by {{review.user_id}} on {{format_date review.date}}</p>
+    <p>Created by {{user.username}} on {{review.createdAt}}</p>
   </div>
   <div class="col-md-7">
     <p>
       {{review.message}}
     </p>
-<p>{{review.replies}}{{review.likes}}</p>
+    <p>likes: {{review.likes}} Replies: {{review.replies}}</p>
+    <button id="like-button">Like</button>
+    <button id="comment-button">Comment</button>
   </div>
 </div>
 {{/each}}
+<script src="/js/homepage.js"></script>
