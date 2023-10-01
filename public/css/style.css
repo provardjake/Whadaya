@@ -57,6 +57,7 @@ header, .project:not(:last-child) {
   animation: textclip 2s linear infinite;
   display: inline-block;
       font-size: 200%;
+      letter-spacing: 3px;
 }
 
 @keyframes textclip {
