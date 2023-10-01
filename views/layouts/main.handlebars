@@ -8,19 +8,24 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-       <p>Whadaya</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-left">
+          <a href="/" class="animate-character">Whadaya</a>
+        </div>
+      </div>
+    </div>
+      {{!-- <h1>
         <a href="/">Whadaya</a>
-      </h1>
+      </h1> --}}
       <nav>
         {{#if logged_in}}
-        <button class="no-button" id="logout">Logout</button>
+        <button class="" id="logout">Logout</button>
         <a href="/review"> Add review</a>
         {{else}}
         <a href="/login">login</a>
