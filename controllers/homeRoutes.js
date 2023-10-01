@@ -1,19 +1,27 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Review, Categories } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['username', 'ASC']],
+    const reviewData = await Review.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"]
+        },
+        {
+          model: Categories,
+          attributes: ["name"]
+        }
+      ]
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
+    const review = reviewData.map((review) => review.get({plain: true}));
 
     res.render('homepage', {
-      users,
+      review,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
     });
