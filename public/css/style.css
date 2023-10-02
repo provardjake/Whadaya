@@ -73,3 +73,7 @@ header, .project:not(:last-child) {
 #logout:hover{
   text-decoration: underline;
 }
+
+#comment-text{
+  width: 100%;
+}
