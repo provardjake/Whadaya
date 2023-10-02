@@ -28,34 +28,5 @@
     </form>
   </div>
 
-  {{#if review.length}}
-  <div class="col-md-6 review-list">
-    <h3>Recent Reviews:</h3>
-
-   {{#each review as |review| }}
-<div class="row mb-4 review">
-  <div class="col-md-10 border border-secondary p-4 rounded bg-light">
-    <h5>{{review.category.name}}</h5>
-    <h2>
-      
-      <a href="/review/{{review.id}}">{{review.title}}</a>
-    </h2>
-  
-    <p class="username text-uppercase" style="margin-bottom: 0px;">@{{user.username}}</p>
-    <p class="date-small">{{review.createdAt}}</p>
-    <p class="serif">
-      {{review.message}}
-    </p>
-
-     <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
-  <button type="button" class="btn btn-outline-dark"id="comment-button"><a href="/review/{{review.id}}">Comment</a></button>
-     
-  </div>
-  
-</div>
-{{/each}}
-  </div>
-  {{/if}}
-</div>
 
 <script src="/js/review.js"></script>
