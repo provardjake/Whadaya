@@ -7,10 +7,10 @@
       <div class="form-group">
         <label for="review-category">Category:</label>
     <select class="p-2" name="review-category" id="review-category"> 
-        <option value="1">Movies</option> 
-        <option value="2">TV Show</option> 
-        <option value="3">Music</option> 
-        <option value="4">Books</option> 
+        <option value=1>Movies</option> 
+        <option value=2>TV Show</option> 
+        <option value=3>Music</option> 
+        <option value=4>Books</option> 
     </select>
       </div>
       <div class="form-group">
@@ -48,7 +48,7 @@
     </p>
 
      <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
-  <button type="button" class="btn btn-outline-dark"id="comment-button">{{review.comment-count}}Comment</button>
+  <button type="button" class="btn btn-outline-dark"id="comment-button"><a href="/review/{{review.id}}">Comment</a></button>
      
   </div>
   
