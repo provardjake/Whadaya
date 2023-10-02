@@ -10,18 +10,24 @@ const newForm = async (event) => {
   if (title && message) {
   const response = await fetch(`/api/review`, {
     method: 'POST',
-    body: JSON.stringify({title, message}),
+    body: JSON.stringify({title, message, category_id}),
     headers: {
       'Content-Type': 'application/json',
     }
   });
-
+  
   if (response.ok) {
     console.log(response);
+    {
+    
+      window.location = '/';
+      alert('Review posted!');
+  }
   } else {
     console.log("Failed to post review", response.json());
   }}
 };
+
 
 const delButton = async (event) => {
   if (event.target.hasAttribute('data-id')) {
