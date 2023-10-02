@@ -74,3 +74,25 @@ header, .project:not(:last-child) {
 #logout:hover{
   text-decoration: underline;
 }
+
+.floater {
+  position: absolute;
+  top: -5px;
+  left: -45px;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  background-color: rgba(255,155,0,0.5);
+  z-index: -1;
+}
+
+.right-floater {
+  position: absolute;
+  bottom: -5px;
+  right: -45px;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  background-color: rgba(255,155,0,0.5);
+  z-index: -1;
+}
