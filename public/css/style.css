@@ -75,6 +75,7 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
+
 .floater {
   position: absolute;
   top: -5px;
@@ -95,4 +96,8 @@ header, .project:not(:last-child) {
   height: 90px;
   background-color: rgba(255,155,0,0.5);
   z-index: -1;
+}
+
+#comment-text{
+  width: 100%;
 }

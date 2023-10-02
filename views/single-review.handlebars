@@ -15,11 +15,15 @@
     <p>likes: {{review.likes}} Replies: {{review.replies}}</p>
     <button id="like-button">Like</button>
     <button id="comment-button">Comment</button>
+    <form>
+      <textarea class="form-control" id="comment-text" rows="3" style="visibility: hidden;"></textarea>
+      <button id="submit-button" style="visibility: hidden;">Submit</button>
+    </form>
   </div>
 
-    {{#each review.comments}}
+    {{#each commentArray}}
     <div class="container">
-      <p class="row">{{this.user_id}}</p>
+      <p class="row">{{this.user.username}} Said: </p>
 
       <p class="row">
         {{this.message}}
@@ -28,3 +32,4 @@
     {{/each}}
 
 </div>
+<script src="/js/single-review.js"></script>

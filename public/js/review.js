@@ -20,7 +20,7 @@ const newFormHandler = async (event) => {
     console.log(response);
   } else {
     console.log("Failed to post review", response.json());
-  }  }
+  }}
 };
 
 const delButtonHandler = async (event) => {
