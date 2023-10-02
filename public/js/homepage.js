@@ -5,29 +5,25 @@
 //         method: "POST",
         
 //     })
-// }
+// // }
 
 
 
-
-// const likeCounts = async (event)=>{
+// const likeCount = async (event)=>{
 //     event.preventDefault();
-    
-
-//     const likes = document.querySelector("#like-button")
-  
-//     likes+1
+//     let likes = JSON.stringify(document.querySelector('#like-button-1'));
 //     console.log(likes)
-//     if{
-//     const response = await fetch(`/api/review`, {
-//       method: 'POST',
-//       body: JSON.stringify({likes}),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       }
-//     })
+//     let likeTwo=JSON.stringify(likes)
+//     let newLikes= likeTwo.substring(0,likes.length-1);
+//     console.log(newLikes)
     
-//   }}
+//     newLikes++
+//     console.log(newlikes)
+//     };
+    
+    
 
-  document.querySelector("#like-button").addEventListener("click", likeCount);
+
+// document.querySelector("#like-button-1").addEventListener("click", likeCount);
+
 
