@@ -1,22 +1,24 @@
 <!-- Loop over each object in the review array -->
 {{#each review as |review| }}
 <div class="row mb-4 review">
-  <div class="col-md-5">
+  <div class="col-md-10 border border-secondary p-4 rounded bg-light">
     <h5>{{review.category.name}}</h5>
     <h2>
       
       <a href="/review/{{review.id}}">{{review.title}}</a>
     </h2>
   
-    <p>Created by {{user.username}} on {{review.createdAt}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
+    <p class="username text-uppercase" style="margin-bottom: 0px;">@{{user.username}}</p>
+    <p class="date-small">{{review.createdAt}}</p>
+    <p class="serif">
       {{review.message}}
     </p>
-    <p>likes: {{review.likes}}</p>
-    <button id="like-button">Like</button>
+
+     <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
+  <button type="button" class="btn btn-outline-dark"id="comment-button">{{review.comment-count}}Comment</button>
+     
   </div>
+  
 </div>
 {{/each}}
 <script src="/js/homepage.js"></script>
