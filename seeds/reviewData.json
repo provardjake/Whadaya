@@ -12,7 +12,7 @@
     "title": "Balls Of Fury",
     "message": "CJ Walken is such an incredible actor, would def watch again!",
     "id": 2,
-    "category_id": 2,
+    "category_id": 1,
     "user_id": 2, 
     "replies": 0,
     "likes": 0
@@ -21,7 +21,7 @@
     "title": "E.T.",
     "message": "Whats not to love about an alien just wanting to go home, i feel you E.T, i feel you.",
     "id": 3,
-    "category_id": 3,
+    "category_id": 1,
     "user_id": 2
-  } 
+  }
 ]
