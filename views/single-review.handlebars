@@ -13,14 +13,11 @@
       {{review.message}}
     </p>
 
-     <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
-  <button type="button" class="btn btn-outline-dark"id="comment-button">{{review.replies}} Comment</button>
-
     <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
   <button type="button" class="btn btn-outline-dark"id="comment-button">{{review.replies}} Comment</button>
     <form>
       <textarea class="form-control" id="comment-text" rows="3" style="visibility: hidden;"></textarea>
-      <button id="submit-button" style="visibility: hidden;">Submit</button>
+      <button type="button" class="btn btn-outline-dark" id="submit-button" style="visibility: hidden;">Submit</button>
     </form>
      
   </div>
@@ -29,7 +26,7 @@
 
    {{#each commentArray}}
     <div class="container border border-secondary p-2 mb-4 rounded bg-light">
-      <p class="row">{{this.user.username}} Said: </p>
+      <p class="username">{{this.user.username}} Said: </p>
 
       <p> {{this.message}}
       </p>
