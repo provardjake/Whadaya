@@ -2,16 +2,26 @@
     <div class="whole-post">
         <div class="info-section">
             <div class="post-name">
-                <a href="/post/{{id}}" class="links">{{title}}</a>
-            </div>
-            <div class="created-by">
-                <p id="comment-subtitle">
-                    Posted by <b>{{user.username}} </b> on <b>{{formatDate created_at}}</b>
-                </p>
-            </div>
-        </div>
-        <div class="content-section">
-            <p>{{content}}</p>
+  <div class="col-md-10 border border-secondary p-4 rounded bg-light">
+    <h5>{{review.category.name}}</h5>
+    <h2>
+      
+      <a href="/review/{{review.id}}">{{review.title}}</a>
+    </h2>
+  
+    <p class="username text-uppercase" style="margin-bottom: 0px;">@{{user.username}}</p>
+    <p class="date-small">{{review.createdAt}}</p>
+    <p class="serif">
+      {{review.message}}
+    </p>
+
+     <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
+  <button type="button" class="btn btn-outline-dark"id="comment-button">{{review.comment-count}}Comment</button>
+     
+  </div>
+  
+</div>
+{{/each}}
         </div>
     </div>
 </article>

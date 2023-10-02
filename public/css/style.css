@@ -15,7 +15,13 @@ button:hover{
   color: #b84706;
 
 }
+.serif{
+  font-family: sans-serif;
+}
 
+.justify-space-around {
+  justify-content: space-around;
+}
 
 
 a:hover{
@@ -35,7 +41,13 @@ header, .project:not(:last-child) {
   text-decoration: none;
   font-size: 100%;
 }
-
+.username
+{
+  font-family: monospace;
+}
+.date-small{
+  font-size: x-small;
+}
 .animate-character
 {
    text-transform: uppercase;
@@ -51,13 +63,11 @@ header, .project:not(:last-child) {
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
       font-size: 200%;
-      letter-spacing: 3px;
 }
 
 @keyframes textclip {
@@ -74,8 +84,96 @@ header, .project:not(:last-child) {
 #logout:hover{
   text-decoration: underline;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.display-flex {
+  display: flex !important;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.container.container-fluid {
+  width: 92%;
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+form {
+  width: 100%;
+}
 
+form .form-group {
+  display: block;
+  width: 100%;
+  margin: 0.625rem 0;
+}
 
+form .form-input,
+form .form-textarea {
+  display: block;
+}
+
+form select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+}
+
+form label,
+form .form-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0.625rem 0 0.25rem 0.3rem;
+}
+
+form .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
+}
+
+form .form-input.form-input-squared {
+  border-radius: 0;
+}
+
+form [type='checkbox'],
+form [type='radio'] {
+  display: inline-block;
+}
+
+label form [type='checkbox'], label
+form [type='radio'] {
+  display: inline-block;
+}
+
+#comment-text{
+  width: 100%;
+}
 .floater {
   position: absolute;
   top: -5px;
@@ -96,8 +194,4 @@ header, .project:not(:last-child) {
   height: 90px;
   background-color: rgba(255,155,0,0.5);
   z-index: -1;
-}
-
-#comment-text{
-  width: 100%;
 }

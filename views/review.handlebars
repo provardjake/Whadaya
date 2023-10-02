@@ -1,17 +1,17 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{user.username}}!</h2>
-  </div>
-</div>
 
 <div class="row mt-4">
-  <div class="col-md-6">
+  <div class="col-md-10 border border-secondary p-4 rounded bg-light">
     <h3>Create a New Review:</h3>
 
     <form class="form new-review-form">
       <div class="form-group">
         <label for="review-category">Category:</label>
-        <input class="form-input" type="text" id="review-category" name="review-category" />
+    <select class="p-2" name="review-category" id="review-category"> 
+        <option value=1>Movies</option> 
+        <option value=2>Music</option> 
+        <option value=3>TV Show</option> 
+        <option value=4>Books</option> 
+    </select>
       </div>
       <div class="form-group">
         <label for="review-title">Title:</label>
@@ -23,33 +23,10 @@
       </div>
       
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-dark">Create</button>
       </div>
     </form>
   </div>
 
-  {{#if review.length}}
-  <div class="col-md-6 review-list">
-    <h3>Recent Reviews:</h3>
-
-    {{#each reviews as |review|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/review/{{review.title}}">{{review.title}}</a></h4>
-      </div>
-       <div class="col-md-8">
-        <h4><a href="/review/{{review.message}}">{{review.message}}</a></h4>
-      </div>
-       <div class="col-md-8">
-        <h4><a href="/review/{{review.category.name}}">{{review.category.name}}</h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
 
 <script src="/js/review.js"></script>
