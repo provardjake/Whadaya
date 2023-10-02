@@ -15,14 +15,21 @@
 
      <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
   <button type="button" class="btn btn-outline-dark"id="comment-button">{{review.replies}} Comment</button>
+
+    <button type="button" class="btn btn-outline-danger"id="like-button">{{review.likes}} ♡</button>
+  <button type="button" class="btn btn-outline-dark"id="comment-button">{{review.replies}} Comment</button>
+    <form>
+      <textarea class="form-control" id="comment-text" rows="3" style="visibility: hidden;"></textarea>
+      <button id="submit-button" style="visibility: hidden;">Submit</button>
+    </form>
      
   </div>
   
 </div>
 
-    {{#each review.comments}}
+   {{#each commentArray}}
     <div class="container border border-secondary p-2 mb-4 rounded bg-light">
-      <p class="username">@{{this.user_id}}</p>
+      <p class="row">{{this.user.username}} Said: </p>
 
       <p> {{this.message}}
       </p>
@@ -30,3 +37,4 @@
     {{/each}}
 
 </div>
+<script src="/js/single-review.js"></script>
