@@ -1,9 +1,9 @@
-const newFormHandler = async (event) => {
+const newForm = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#review-title').value.trim();
   const message = document.querySelector('#review-message').value.trim();
-  const category = document.querySelector('#review-category').value.trim();
+  const category_id = document.querySelector('#review-category').value.trim();
   
 
 
@@ -23,7 +23,7 @@ const newFormHandler = async (event) => {
   }}
 };
 
-const delButtonHandler = async (event) => {
+const delButton = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -39,9 +39,9 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('.new-review-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-review-form').addEventListener('submit', newForm);
 
-document.querySelector('.review-list').addEventListener('click', delButtonHandler);
+document.querySelector('.review-list').addEventListener('click', delButton);
 
 
 
