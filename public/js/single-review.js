@@ -30,5 +30,12 @@ const submitButton = async(event)=>{
     }
 }
 
+const likeButton = async(event)=>{
+    event.preventDefault();
+    
+
+}
+
 document.querySelector("#comment-button").addEventListener("click", commentButton);
 document.querySelector("#submit-button").addEventListener("click", submitButton);
+document.querySelector("#like-button").addEventListener("click", likeButton);
