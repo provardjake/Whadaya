@@ -28,27 +28,9 @@ const newForm = async (event) => {
   }}
 };
 
-
-
-const delButton = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/review/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/review');
-    } else {
-      alert('Failed to delete review');
-    }
-  }
-};
-
 document.querySelector('.new-review-form').addEventListener('submit', newForm);
 
-document.querySelector('.review-list').addEventListener('click', delButton);
+
 
 
 
