@@ -24,11 +24,11 @@
   
 </div>
 
-   {{#each commentArray}}
+   {{#each commentArray as |comment|}}
     <div class="container border border-secondary p-2 mb-4 rounded bg-light">
-      <p class="username">{{this.user.username}} Said: </p>
+      <p class="username">{{comment.user.username}} Said: </p>
 
-      <p> {{this.message}}
+      <p> {{comment.message}}
       </p>
     </div>
     {{/each}}

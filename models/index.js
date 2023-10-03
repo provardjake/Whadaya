@@ -19,6 +19,12 @@ Comment.belongsTo(User,{
     foreignKey: "user_id"
 });
 
+User.belongsToMany(Review,{
+    through: Comment,
+    foreignKey: "user_id"
+});
+
+
 Categories.hasMany(Review,{
     foreignKey: "category_id"
 });

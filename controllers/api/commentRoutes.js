@@ -35,6 +35,9 @@ router.get("/:id", async(req, res)=>{
 });
 
 router.post("/", async(req, res)=>{
+    console.log(req.body);
+    console.log("----------------------------------------");
+
     try{
         const newComment = await Comment.create({
             ...req.body,
