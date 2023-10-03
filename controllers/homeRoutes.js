@@ -57,18 +57,18 @@ router.get("/review/:id", withAuth, async(req, res)=>{
         {
           model: Comment,
           attributes: ["message", "likes", "replies", "user_id"],
+          include: [
+            {
+              model: User
+            }
+          ]
           
         },
-        {
-          model: User,
-          through: Review,
-          as: "reviewUser"
-        }
       ]
       });
 
       const review = reviewData.get({plain: true});
-      console.log(review);
+      console.log(review.comments[0]);
 
       for(let i = 0; i < review.comments.length; i++){
         const commentData = await Comment.findByPk(review.comments[i].user_id, {
