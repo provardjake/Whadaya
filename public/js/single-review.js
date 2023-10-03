@@ -8,9 +8,9 @@ const commentButton = async (event) =>{
 const submitButton = async(event)=>{
     event.preventDefault();
 
-    let message = document.querySelector('#comment-text').value.trim();
-    let currentUrl = window.location.pathname;
-    let review_id = currentUrl.match(/\d+/)[0];
+    const message = document.querySelector('#comment-text').value.trim();
+    const currentUrl = window.location.pathname;
+    const review_id = currentUrl.match(/\d+/)[0];
 
     if(message){
         const response = await fetch("/api/comment", {
