@@ -43,7 +43,7 @@ router.get("/review", withAuth, async(req, res)=>{
 router.get("/review/:id", withAuth, async(req, res)=>{
   try{
 
-    const commentArray = [];
+    let commentArray = [];
     const reviewData = await Review.findByPk(req.params.id, {
       include: [
         {
@@ -57,23 +57,18 @@ router.get("/review/:id", withAuth, async(req, res)=>{
         {
           model: Comment,
           attributes: ["message", "likes", "replies", "user_id"],
-        }
+          include: [
+            {
+              model: User
+            }
+          ]
+          
+        },
       ]
       });
 
       const review = reviewData.get({plain: true});
-      
-
-      // const commentData = await Comment.findByPk(review.comments[0].user_id, {
-      //   include: [
-      //     {
-      //       model: User,
-      //       attributes: ["username"]
-      //     }
-      //   ]
-      // });
-
-      // const comment = commentData.get({plain: true});
+      console.log(review.comments[0]);
 
       for(let i = 0; i < review.comments.length; i++){
         const commentData = await Comment.findByPk(review.comments[i].user_id, {
@@ -86,15 +81,11 @@ router.get("/review/:id", withAuth, async(req, res)=>{
         });
 
         const comment = commentData.get({plain: true});
-
         commentArray.push(comment);
       }
 
-      console.log(commentArray);
-
       res.render("single-review", {
         review,
-        commentArray,
         logged_in: req.session.logged_in,
       });
   }

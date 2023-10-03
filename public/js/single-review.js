@@ -11,6 +11,7 @@ const submitButton = async(event)=>{
     const message = document.querySelector('#comment-text').value.trim();
     const currentUrl = window.location.pathname;
     const review_id = currentUrl.match(/\d+/)[0];
+    console.log(message);
 
     if(message){
         const response = await fetch("/api/comment", {
@@ -32,7 +33,7 @@ const submitButton = async(event)=>{
 
 const likeButton = async(event)=>{
     event.preventDefault();
-    
+
 
 }
 
